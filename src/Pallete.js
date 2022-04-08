@@ -5,7 +5,7 @@ import './Pallete.css';
 class Pallete extends Component {
   render() {
       const colorBoxes = this.props.colors.map(color => (
-          <ColorBox backgorund={color.color} name={color.name} />
+          <ColorBox background={color.color} name={color.name} />
       ))
     return (
       <div className='Pallete'>
