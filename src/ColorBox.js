@@ -123,7 +123,7 @@ const styles = {
         transform: "scale(1)",
         zIndex: "25",
         transition: "all 0.4s ease-in-out",
-        transitionDelay:" 0.3s",
+        transitionDelay: "0.3s",
     }
 };
 
