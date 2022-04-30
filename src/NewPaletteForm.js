@@ -88,6 +88,7 @@ class NewPaletteForm extends Component {
         this.updateCurrentColor = this.updateCurrentColor.bind(this);
         this.addNewColor = this.addNewColor.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount(){
         ValidatorForm.addValidationRule('isColorNameUnique', (value) => 
@@ -122,6 +123,16 @@ class NewPaletteForm extends Component {
     handleChange(evt) {
         this.setState({ newName: evt.target.value });
     }
+    handleSubmit(){
+        let newName = "New Test Palette"
+        const newPalette = {
+            paletteName: "New Test Palette",
+            id: newName.toLowerCase().replace(/ /g, "-"),
+            colors: this.state.colors
+        }
+       this.props.savePalette(newPalette);
+       this.props.history.push("/");
+    }
 
     render() {
         const { classes } = this.props;
@@ -132,6 +143,7 @@ class NewPaletteForm extends Component {
                 <CssBaseline />
                 <AppBar
                     position="fixed"
+                    color='default'
                     className={classNames(classes.appBar, {
                         [classes.appBarShift]: open,
                     })}
@@ -148,6 +160,10 @@ class NewPaletteForm extends Component {
                         <Typography variant="h6" color="inherit" noWrap>
                             Persistent drawer
                         </Typography>
+                        <div>
+                            <Button variant="contained" color="secondary">GO BACK</Button>
+                            <Button variant="contained" color="primary" onClick={this.handleSubmit}>Save Palette</Button>
+                        </div>
                     </Toolbar>
                 </AppBar>
                 <Drawer
