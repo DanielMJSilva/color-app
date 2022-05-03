@@ -13,7 +13,7 @@ const styles ={
         position: "relative",
         cursor: "pointer",
         marginBottom: "-3.5px",
-        // verticalAlign: "top",
+        verticalAlign: "top",
         "&:hover svg": {
             color: "white",
             transform: "scale(1.5)"
