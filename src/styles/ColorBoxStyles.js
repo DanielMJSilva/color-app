@@ -1,6 +1,6 @@
 import chroma from 'chroma-js';
-// eslint-disable-next-line import/no-anonymous-default-export
-export default {
+
+const styles = {
     ColorBox: {
         width: "20%",
         height: props => props.showFullPalette ? "25%" : "50%",
@@ -121,3 +121,5 @@ export default {
         transitionDelay: "0.3s",
     }
 };
+
+export default styles;
